@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>视频导航</title>
+		<link rel="shortcut icon" href="/static/images/home.png" />
+		<link rel="stylesheet" type="text/css" href="/static/css/video_index.css">
+		<script src="/static/js/jquery-1.10.1.min.js"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<style type="text/css">
+			.xxx {
+				font-size:14px;
+				display: block;
+				text-align:right;
+				margin: 10px 20px 0 0 ;
+			}
+			.xxx a:link{color: beige;}
+			.xxx a:visited{color: beige;}
+			.xxx a:hover{color: red;}
+			{% if islogin == 1 %}
+				.xxx a {display: none;}
+				.xxx:after{content: '已登录';font-size: 14px;color: beige;}
+			{% endif %}
+		</style>
+	</head>
+	<body>
+		<div class="centerBox">
+		<div class="xxx"><a href="/" class="login">登录/注册</a></div>
+			<div class="center-list">
+				<div class="centerBody">
+					<img src="/static/images/home.png" />
+					<p class="btn-p">
+<!--						<a href="/video/comic_m3u8/1" title="动漫-1">网-1</a>-->
+{#						<a href="/video/comic_mp4/1" title="动漫-2">网-2</a>#}
+<!--						<a href="/video/rihan/1" title="日韩">类_1</a>-->
+<!--						<a href="/video/domestic/1" title="国产">类_2</a>-->
+<!--						<a href="/video/oumei/1" title="欧美">类_3</a>-->
+<!--						<a href="/video/sanji/1" title="三级">类_4</a>-->
+						<a href="/login" title="登录">登录</a>
+						<a href="/get?name=admin&pass=123&pass=456" title="登录">GET请求</a>
+						<a href="/set_cookie" title="Cookie设置">Cookie设置</a>
+						<a href="/get_cookie" title="Cookie获取">Cookie获取</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{{ title }}</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/Basc.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/css/video.css"/>
+		<style type="text/css">
+			.xh_main{width: 1170px;margin: 0 auto;position: relative;}
+			.padt100{padding-top: 100px;}
+			@media only screen and (max-width:1200px){
+				.xh_main{width: 100%;}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="xh_main padt100" style="z-index: 9;">
+			<div class="video-wrap">
+				<!--视频-->
+				<video class="video" poster="{{ img }}">
+					<source src="{{ video }}" type="video/mp4"></source>
+				</video>
+
+				<!--控制条-->
+				<div class="video-controls">
+					<!--控制条背景-->
+					<div class="video-controls-bg"></div>
+					<!--进度条-->
+					<div class="loading-line">
+						<em class="loading_em"></em>
+						<span class="loading_span"></span>
+					</div>
+					<!--播放/暂停-->
+					<div class="video-btn"></div>
+					<!--播放进度-->
+					<div class="video-time">
+						<span class="video-now">00:00</span>
+						/
+						<span class="video-count">00:00</span>
+					</div>
+					<!--全屏-->
+					<div data-videofull='false' class="video-fullscreen"></div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
+<script src="/static/js/jquery-1.10.1.min.js"></script>
+<script src="/static/js/video.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(event){
+		new myVideo(event,$(".video-wrap"));
+	})
+</script>
